@@ -1,0 +1,23 @@
+{
+  "name": "starwars",
+  "version": "0.1.0",
+  "private": true,
+  "homepage": "https://zero-to-mastery.github.io/starwars-spaceships/",
+  "dependencies": {
+    "gh-pages": "^1.1.0",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-particles-js": "^2.1.0",
+    "react-scripts": "1.1.1",
+    "react-tilt": "^0.1.4",
+    "tachyons": "^4.9.1"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
+    "eject": "react-scripts eject"
+  }
+}

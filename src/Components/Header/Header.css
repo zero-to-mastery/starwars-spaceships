@@ -1,0 +1,121 @@
+@import url('https://fonts.googleapis.com/css?family=Dosis:200,400');
+* {
+	/*margin: 0;
+	padding: 0;*/
+}
+
+.hash {
+    margin-right: auto;
+    margin-left: auto;
+}
+
+h1.neon-heading {
+	color: #fff;
+	font-family: 'Dosis', Calibri, sans-serif;
+	text-transform: uppercase;
+	font-size: 55px;
+	font-weight: 200;
+	text-align: center;
+}
+
+   h1.neon-heading.first {
+                padding-top: 20px;
+                font-size: 75px;
+                text-shadow: 0px 0px 10px #9D00FF,
+                    0px 0px 20px #9D00FF,
+                    0px 0px 30px #9D00FF,
+                    0px 0px 40px #9D00FF,
+                    0px 0px 50px #9D00FF,
+                    0px 0px 60px #9D00FF;
+            }
+            h1.neon-heading.second {
+                text-shadow: 0px 0px 10px #33FF00,
+                    0px 0px 20px #33FF00,
+                    0px 0px 30px #33FF00,
+                    0px 0px 40px #33FF00,
+                    0px 0px 50px #33FF00,
+                    0px 0px 60px #33FF00;
+                animation: pulsating 3s infinite;
+            }
+
+/* ANIMATIONS */
+
+/* FLICKERING */
+            span.flickering-1 {
+                animation: flickering-1 6s infinite;
+            }
+            span.flickering-2 {
+                animation: flickering-2 3s infinite;
+            }
+            span.flickering-3 {
+                animation: flickering-3 5s infinite;
+            }
+
+            span.flickering-4 {
+                animation: flickering-4 8s infinite;
+            }
+            
+            /* ANIMATIONS */
+            @keyframes pulsating {
+                0% {
+                    text-shadow: 0px 0px 0px;
+                    opacity: 0;
+                }
+                50% {
+                    text-shadow: 0px 0px 10px #33FF00,
+                        0px 0px 20px #33FF00,
+                        0px 0px 30px #33FF00,
+                        0px 0px 40px #33FF00,
+                        0px 0px 50px #33FF00,
+                        0px 0px 60px #33FF00;
+                    opacity: 1;
+                }
+                100% {
+                    text-shadow: 0px 0px 0px;
+                    opacity: 0;
+                }
+            }
+            
+            @keyframes flickering-1 {
+                0% { opacity: 1; }
+                52% { opacity: 1; }
+                55% { opacity: 0; }
+                56% { opacity: 1; }
+                100% { opacity: 1; }
+            }
+            
+            @keyframes flickering-2 {
+                0% { opacity: 1; }
+                62% { opacity: 1; }
+                65% { opacity: 0; }
+                66% { opacity: 1; }
+                69% { opacity: 0; }
+                70% { opacity: 1; }
+                73% { opacity: 0; }
+                74% { opacity: 1; }
+                100% { opacity: 1; }
+            }
+            
+            @keyframes flickering-3 {
+                0% { opacity: 1; }
+                82% { opacity: 1; }
+                84% { opacity: 0; }
+                85% { opacity: 1; }
+                87% { opacity: 0; }
+                88% { opacity: 1; }
+                90% { opacity: 0; }
+                91% { opacity: 1; }
+                100% { opacity: 1; }
+            }
+
+            @keyframes flickering-4 {
+               0% { opacity: 1; }
+                82% { opacity: 1; }
+                84% { opacity: 0; }
+                85% { opacity: 1; }
+                87% { opacity: 0; }
+                88% { opacity: 1; }
+                90% { opacity: 0; }
+                91% { opacity: 1; }
+                100% { opacity: 1; }
+            }
