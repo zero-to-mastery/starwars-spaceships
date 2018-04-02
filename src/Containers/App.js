@@ -6,7 +6,7 @@ import Searchbox from '../Components/Searchbox/Searchbox'
 import CardList from '../Components/CardList/CardList'
 import './App.css';
 import Menu from '../Components/Menu/Menu';
-import Planets from '../Components/Planets/Planets';
+
 import Home from '../Components/Home/Home';
 import PlanetList from '../Components/PlanetList/PlanetList';
 
@@ -89,6 +89,7 @@ class App extends Component {
           {
             this.state.route === 'planets'?
             <div>
+              <Searchbox searchChange={this.onSearchChange} />
               <PlanetList planets={filteredPlanets}/>
             </div>
             : null
