@@ -8,6 +8,7 @@ import './App.css';
 import Menu from '../Components/Menu/Menu';
 import Planets from '../Components/Planets/Planets';
 import Home from '../Components/Home/Home';
+import PlanetList from '../Components/PlanetList/PlanetList';
 
 
 const particlesoptions = {
@@ -29,6 +30,7 @@ class App extends Component {
     super()
     this.state = {
       spaceships: [],
+      planets: [],
       searhfield: '',
       route: 'home'
     }
@@ -38,6 +40,10 @@ class App extends Component {
       .then(response => response.json())
       .then(result => result = result.results)
       .then(ships => this.setState({ spaceships: ships }))
+    fetch('https://swapi.co/api/planets/')
+      .then(response => response.json())
+      .then(result => result = result.results)
+      .then(planets => this.setState({ planets: planets }))
   }
   onSearchChange = (event) => {
     this.setState({ searhfield: event.target.value })
@@ -49,6 +55,10 @@ class App extends Component {
 
     const filteredShips = this.state.spaceships.filter(filtships => {
       return filtships.name.toLowerCase().includes(this.state.searhfield.toLowerCase())
+    })
+
+    const filteredPlanets = this.state.planets.filter(filtplanets => {
+      return filtplanets.name.toLowerCase().includes(this.state.searhfield.toLowerCase())
     })
 
     if (!this.state.spaceships.length) {
@@ -79,7 +89,7 @@ class App extends Component {
           {
             this.state.route === 'planets'?
             <div>
-              <Planets />
+              <PlanetList planets={filteredPlanets}/>
             </div>
             : null
           }
