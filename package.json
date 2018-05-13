@@ -20,5 +20,19 @@
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject"
-  }
+  },
+  "description": "\"starwars-spaceships\"",
+  "main": "src/index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zero-to-mastery/starwars-spaceships.git"
+  },
+  "author": "ZTM",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zero-to-mastery/starwars-spaceships/issues"
+  },
+  "homepage": "https://github.com/zero-to-mastery/starwars-spaceships#readme",
+  "devDependencies": {}
+}
 }
