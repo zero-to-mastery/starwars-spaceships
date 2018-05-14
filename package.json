@@ -2,7 +2,7 @@
   "name": "starwars",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://github.com/zero-to-mastery/starwars-spaceships#readme",
+  "homepage": ".",
   "dependencies": {
     "gh-pages": "^1.1.0",
     "npm": "^5.8.0",
