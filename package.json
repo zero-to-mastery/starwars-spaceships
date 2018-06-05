@@ -5,11 +5,12 @@
   "homepage": ".",
   "dependencies": {
     "gh-pages": "^1.2.0",
-    "npm": "^5.10.0",
+    "node": "10.3.0",
+    "npm": "^6.1.0",
     "react": "^16.4.0",
     "react-dom": "^16.4.0",
     "react-particles-js": "^2.2.0",
-    "react-scripts": "1.1.1",
+    "react-scripts": "1.1.4",
     "react-tilt": "^0.1.4",
     "tachyons": "^4.10.0"
   },
