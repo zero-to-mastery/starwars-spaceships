@@ -10,6 +10,9 @@ cache:
 script:
   - npm test
   - npm run build
++matrix:
+  allow_failures:
+    - node_js: node
 deploy:
   provider: pages
   skip_cleanup: true
