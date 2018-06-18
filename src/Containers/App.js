@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React { Component } from 'react';
 import Header from '../Components/Header/Header'
 import Particles from 'react-particles-js';
 import Spaceship from '../Components/Spaceship/Spaceship'
