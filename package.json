@@ -10,7 +10,6 @@
     "hpack": "^1.0.0",
     "lodash": "^4.17.10",
     "npm": "^6.1.0",
-    "pack-js": "0.0.5",
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-particles-js": "^2.2.0",
