@@ -4,6 +4,7 @@ import Particles from 'react-particles-js';
 import Spaceship from '../Components/Spaceship/Spaceship'
 import Searchbox from '../Components/Searchbox/Searchbox'
 import CardList from '../Components/CardList/CardList'
+import Time from '../Components/Time/Time'
 import './App.css';
 import Menu from '../Components/Menu/Menu';
 
@@ -69,7 +70,8 @@ class App extends Component {
         <div className='tc'>
           <Particles className='pc' params={particlesoptions} />
           <Menu routeChange={this.onRouteChange} />
-          <Header />
+          <h1 className='tc f1 courier  ' style={{ 'color': 'white' }}><Time  /></h1>
+           <Header />
           <Spaceship />
           {
             this.state.route === 'home'?
