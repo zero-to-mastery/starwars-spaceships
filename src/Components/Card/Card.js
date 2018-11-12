@@ -1,10 +1,19 @@
 import React from 'react';
 import './Card.css'
 
-const Card = ({ name, model, starship_class, consumables }) => {
+const Card = ({ name, model, starship_class, consumables, image }) => {
+
+  //in case a picture doesn't exist, it will catch the error and set the image to the default one
+  try {
+    require(`../../images/${image}.jpg`)
+  }
+  catch(err) {
+    image = 'default'
+  }
+
   return (
     <div className='tc hashir tc dib br3 pa2 ma4 grow bw2 shadow-5'>
-      <img alt='ships' className='br3 grow bw2 shadow-5' src='http://via.placeholder.com/200x200' />
+      <img alt='ships' className='br3 grow bw2 shadow-5' src = {require(`../../images/${image}.jpg`)} />
       <div>
         <dl className="lh-title pt3 ph1 mt0">
           <dt className="f6 b">Name</dt>

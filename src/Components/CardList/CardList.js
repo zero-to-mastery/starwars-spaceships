@@ -13,6 +13,7 @@ const CardList = ({ spaceships }) => {
               model={spaceships[i].model}
               starship_class={spaceships[i].starship_class}
               consumables={spaceships[i].consumables}
+              image={spaceships[i].name}
             />
           );
         })
