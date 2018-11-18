@@ -1,4 +1,6 @@
 import React, { Component } from 'react';
+import apiCall from '../API/api';
+import * as apiRoutes from '../API/api_routes';
 import Header from '../Components/Header/Header'
 import Particles from 'react-particles-js';
 import Spaceship from '../Components/Spaceship/Spaceship'
@@ -37,20 +39,14 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    fetch('https://swapi.co/api/starships/')
-      .then(response => response.json())
-      .then(result => result = result.results)
-      .then(ships => this.setState({ spaceships: ships }))
-    fetch('https://swapi.co/api/planets/')
-      .then(response => response.json())
-      .then(result => result = result.results)
-      .then(planets => this.setState({ planets: planets }))
+    apiCall(apiRoutes.REQ_STARSHIPS).then(ships => this.setState({ spaceships: ships.results }));
+    apiCall(apiRoutes.REQ_PLANETS).then(planets => this.setState({ planets: planets.results }));
   }
   onSearchChange = (event) => {
     this.setState({ searhfield: event.target.value })
   }
   onRouteChange = (route) => {
-    this.setState({route: route});
+    this.setState({ route: route });
   };
   render() {
 
@@ -70,31 +66,31 @@ class App extends Component {
         <div className='tc'>
           <Particles className='pc' params={particlesoptions} />
           <Menu routeChange={this.onRouteChange} />
-          <h1 className='tc f1 courier  ' style={{ 'color': 'white' }}><Time  /></h1>
-           <Header />
+          <h1 className='tc f1 courier  ' style={{ 'color': 'white' }}><Time /></h1>
+          <Header />
           <Spaceship />
           {
-            this.state.route === 'home'?
-            <div>
-              <Home />
-            </div>
-            : null
+            this.state.route === 'home' ?
+              <div>
+                <Home />
+              </div>
+              : null
           }
           {
-            this.state.route === 'spaceship'?
-            <div>
-              <Searchbox searchChange={this.onSearchChange} />
-              <CardList spaceships={filteredShips} />
-            </div>
-            : null
+            this.state.route === 'spaceship' ?
+              <div>
+                <Searchbox searchChange={this.onSearchChange} />
+                <CardList spaceships={filteredShips} />
+              </div>
+              : null
           }
           {
-            this.state.route === 'planets'?
-            <div>
-              <Searchbox searchChange={this.onSearchChange} />
-              <PlanetList planets={filteredPlanets}/>
-            </div>
-            : null
+            this.state.route === 'planets' ?
+              <div>
+                <Searchbox searchChange={this.onSearchChange} />
+                <PlanetList planets={filteredPlanets} />
+              </div>
+              : null
           }
         </div>
       );
