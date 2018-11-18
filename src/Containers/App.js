@@ -3,29 +3,15 @@ import apiCall from '../API/api';
 import * as apiRoutes from '../API/api_routes';
 import Header from '../Components/Header/Header'
 import Particles from 'react-particles-js';
+import * as utility from '../utility/utility';
 import Spaceship from '../Components/Spaceship/Spaceship'
 import Searchbox from '../Components/Searchbox/Searchbox'
 import CardList from '../Components/CardList/CardList'
 import Time from '../Components/Time/Time'
 import './App.css';
 import Menu from '../Components/Menu/Menu';
-
 import Home from '../Components/Home/Home';
 import PlanetList from '../Components/PlanetList/PlanetList';
-
-
-const particlesoptions = {
-  particles: {
-    number: {
-      value: 50,
-      density: {
-        enabl: true,
-        value_area: 800
-      }
-    }
-  }
-}
-
 
 
 class App extends Component {
@@ -64,10 +50,10 @@ class App extends Component {
     else {
       return (
         <div className='tc'>
-          <Particles className='pc' params={particlesoptions} />
-          <Menu routeChange={this.onRouteChange} />
+          <Particles className='pc' params={utility.particlesoptions} />
+          <Header routeChange={this.onRouteChange} />
           <h1 className='tc f1 courier  ' style={{ 'color': 'white' }}><Time /></h1>
-          <Header />
+          <Menu />
           <Spaceship />
           {
             this.state.route === 'home' ?

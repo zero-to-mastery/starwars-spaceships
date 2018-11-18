@@ -1,17 +1,25 @@
 import React from 'react';
-import './Header.css'
+import './Header.css';
 
 
-const Header = () => {
+const Header = ({ routeChange }) => {
+
   return (
-    <div className=''>
-      <div className='hash mw7-ns'>
-        <h1 className="neon-heading first pointer mv0 grow"><span className="flickering-3">S</span>ta<span className="flickering-1">r</span>
-        <span className="flickering-2">W</span>
-        <span className="flickering-3">a</span>r<span className="flickering-4">s</span></h1>
-        <h1 className="neon-heading second pointer mv0 grow">The Entire Galaxy ...!</h1>
-      </div>
-    </div>
-  );
+    <nav className="navbar">
+      <ul>
+        <li>
+          <div onClick={() => routeChange('home')} >Home</div>
+        </li>
+        <li>
+          <div onClick={() => routeChange('spaceship')}>Spaceships</div>
+        </li>
+        <li>
+          <div onClick={() => routeChange('planets')}>Planets</div>
+        </li>
+      </ul>
+    </nav>
+  )
+
+
 }
 export default Header;
