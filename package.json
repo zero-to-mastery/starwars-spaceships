@@ -13,7 +13,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-particles-js": "^2.2.0",
-    "react-scripts": "1.1.4",
+    "react-scripts": "^2.1.1",
     "react-tilt": "^0.1.4",
     "tachyons": "^4.10.0",
     "validate-npm-package-name": "^3.0.0"
@@ -37,5 +37,11 @@
   "bugs": {
     "url": "https://github.com/zero-to-mastery/starwars-spaceships/issues"
   },
-  "devDependencies": {}
+  "devDependencies": {},
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
