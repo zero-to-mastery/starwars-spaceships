@@ -4,11 +4,5 @@
     font-weight: bold;
     cursor: pointer;
 }
- 
-ul {list-style: none;padding: auto;margin: auto;}
- ul li {display: block;position: relative;float: left;border:1px solid #000}
 
-li {
-	margin-left: 100px;
-}
-li:hover {color:blue;}
+.navbar-item:hover {color: rgb(104, 197, 116);}
