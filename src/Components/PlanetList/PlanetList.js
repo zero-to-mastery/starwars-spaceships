@@ -12,6 +12,7 @@ const PlanetList = ({ planets }) => {
 							name={planets[i].name}
 							terrain={planets[i].terrain}
 							population={planets[i].population}
+							image={planets[i].name}
 						/>
 					);
 				})
