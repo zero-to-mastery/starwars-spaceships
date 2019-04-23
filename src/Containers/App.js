@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import apiCall from '../API/api';
 import * as apiRoutes from '../API/api_routes';
-import Header from '../Components/Header/Header'
+import Header from '../Components/Header/Header';
+// import Films from '../Components/Films/Films';
 import Particles from 'react-particles-js';
 import * as utility from '../utility/utility';
 import Spaceship from '../Components/Spaceship/Spaceship'
@@ -11,6 +12,7 @@ import Time from '../Components/Time/Time'
 import './App.css';
 import Menu from '../Components/Menu/Menu';
 import Home from '../Components/Home/Home';
+import FilmList from '../Components/FilmList/FilmList';
 import PlanetList from '../Components/PlanetList/PlanetList';
 
 
@@ -18,30 +20,36 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
+      films: [],
       spaceships: [],
       planets: [],
-      searhfield: '',
+      searchfield: '',
       route: 'home'
     }
   }
   componentDidMount() {
+    apiCall(apiRoutes.REQ_FILMS).then(films => this.setState({ films: films.results }));
     apiCall(apiRoutes.REQ_STARSHIPS).then(ships => this.setState({ spaceships: ships.results }));
     apiCall(apiRoutes.REQ_PLANETS).then(planets => this.setState({ planets: planets.results }));
   }
   onSearchChange = (event) => {
-    this.setState({ searhfield: event.target.value })
+    this.setState({ searchfield: event.target.value })
   }
   onRouteChange = (route) => {
     this.setState({ route: route });
   };
   render() {
 
+    const filteredFilms = this.state.films.filter(filtfilms => {
+      return filtfilms.title.toLowerCase().includes(this.state.searchfield.toLowerCase())
+    })
+
     const filteredShips = this.state.spaceships.filter(filtships => {
-      return filtships.name.toLowerCase().includes(this.state.searhfield.toLowerCase())
+      return filtships.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
     })
 
     const filteredPlanets = this.state.planets.filter(filtplanets => {
-      return filtplanets.name.toLowerCase().includes(this.state.searhfield.toLowerCase())
+      return filtplanets.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
     })
 
     if (!this.state.spaceships.length) {
@@ -59,6 +67,14 @@ class App extends Component {
             this.state.route === 'home' ?
               <div>
                 <Home />
+              </div>
+              : null
+          }
+          {
+            this.state.route === 'films' ?
+              <div>
+                <Searchbox searchChange={this.onSearchChange} />
+                <FilmList films={filteredFilms} />
               </div>
               : null
           }

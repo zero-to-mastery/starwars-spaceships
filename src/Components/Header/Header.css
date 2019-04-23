@@ -1,4 +1,6 @@
 .navbar {
+    max-width: 1260px;
+    margin: auto;
     color: #fff;
     font-size: 32px;
     font-weight: bold;
