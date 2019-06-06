@@ -5,9 +5,9 @@ import image from './spaceship.png'
 
 const Spaceship = () => {
 	return(
-		<div className='abc pa3'>
-			<Tilt className="Tilt" options={{ max : 25 }} 
-			style={{ height: 50, width: 150 }} >
+		<div className='abc pt3'>
+			<Tilt className="Tilt" options={{ max : 45, scale : 1.25 }} 
+			style={{ height: 75, width: 200 }} >
  				<div className="Tilt-inner"> 
  					<img alt='ship' src={image} />
  				</div>
