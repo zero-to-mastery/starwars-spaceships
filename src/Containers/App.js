@@ -28,7 +28,10 @@ class App extends Component {
     }
   }
   componentDidMount() {
-    apiCall(apiRoutes.REQ_FILMS).then(films => this.setState({ films: films.results }));
+    apiCall(apiRoutes.REQ_FILMS).then(films => {
+      films.results.sort((a, b) => a.episode_id - b.episode_id);
+      this.setState({ films: films.results });
+    });
     apiCall(apiRoutes.REQ_STARSHIPS).then(ships => this.setState({ spaceships: ships.results }));
     apiCall(apiRoutes.REQ_PLANETS).then(planets => this.setState({ planets: planets.results }));
   }
