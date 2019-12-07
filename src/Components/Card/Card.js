@@ -13,7 +13,9 @@ const Card = ({ name, model, starship_class, consumables, image }) => {
 
   return (
     <div className='tc hashir tc dib br3 pa2 ma4 grow bw2 shadow-5'>
-      <img alt='ships' className='br3 grow bw2 shadow-5' src = {require(`../../images/${image}.jpg`)} />
+      <img alt='ships' className='br3 grow bw2 shadow-5' 
+        style={{ width: '300px', height: '300px' }}
+        src = {require(`../../images/${image}.jpg`)} />
       <div>
         <dl className="lh-title pt3 ph1 mt0">
           <dt className="f6 b">Name</dt>
