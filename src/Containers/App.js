@@ -40,6 +40,7 @@ class App extends Component {
   }
   onRouteChange = (route) => {
     this.setState({ route: route });
+    this.setState({ searchfield: '' });
   };
   render() {
 
