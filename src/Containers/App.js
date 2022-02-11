@@ -3,7 +3,7 @@ import apiCall from '../API/api';
 import * as apiRoutes from '../API/api_routes';
 import Header from '../Components/Header/Header';
 // import Films from '../Components/Films/Films';
-import Particles from 'react-particles-js';
+import Particles from 'react-tsparticles';
 import * as utility from '../utility/utility';
 import Spaceship from '../Components/Spaceship/Spaceship'
 import Searchbox from '../Components/Searchbox/Searchbox'
