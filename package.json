@@ -4,7 +4,7 @@
   "private": true,
   "homepage": ".",
   "dependencies": {
-    "ajv": "^6.5.1",
+    "ajv": "^6.12.3",
     "ajv-keywords": "^3.2.0",
     "gh-pages": "^1.2.0",
     "hpack": "^1.0.0",
