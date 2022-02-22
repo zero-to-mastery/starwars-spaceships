@@ -8,6 +8,7 @@ const Header = ({ routeChange }) => {
       <div className="navbar-item f3 courier grow" onClick={() => routeChange('films')}>Films</div>
       <div className="navbar-item f3 courier grow" onClick={() => routeChange('spaceship')}>Spaceships</div>
       <div className="navbar-item f3 courier grow" onClick={() => routeChange('planets')}>Planets</div>
+      <div className="navbar-item f3 courier grow" onClick={() => routeChange('people')}>People</div>
     </nav>
   )
 }

@@ -8,12 +8,12 @@ import * as utility from '../utility/utility';
 import Spaceship from '../Components/Spaceship/Spaceship'
 import Searchbox from '../Components/Searchbox/Searchbox'
 import CardList from '../Components/CardList/CardList'
-import Time from '../Components/Time/Time'
 import './App.css';
 import Menu from '../Components/Menu/Menu';
 import Home from '../Components/Home/Home';
 import FilmList from '../Components/FilmList/FilmList';
 import PlanetList from '../Components/PlanetList/PlanetList';
+import PeopleList from '../Components/PeopleList/PeopleList';
 
 
 class App extends Component {
@@ -23,6 +23,7 @@ class App extends Component {
       films: [],
       spaceships: [],
       planets: [],
+      people: [],
       searchfield: '',
       route: 'home'
     }
@@ -34,6 +35,7 @@ class App extends Component {
     });
     apiCall(apiRoutes.REQ_STARSHIPS).then(ships => this.setState({ spaceships: ships.results }));
     apiCall(apiRoutes.REQ_PLANETS).then(planets => this.setState({ planets: planets.results }));
+    apiCall(apiRoutes.REQ_PEOPLE).then(people => this.setState({people: people.results}));
   }
   onSearchChange = (event) => {
     this.setState({ searchfield: event.target.value })
@@ -56,6 +58,10 @@ class App extends Component {
       return filtplanets.name.toLowerCase().includes(this.state.searchfield.toLowerCase())
     })
 
+    const filteredPeople = this.state.people.filter(filtpeople => {
+      return filtpeople.name.toLowerCase().includes(this.state.searchfield.toLocaleLowerCase())
+    })
+
     if (!this.state.spaceships.length) {
       return <h1 className='tc f1 courier  ' style={{ 'color': 'white' }}>LOADING..</h1>
     }
@@ -64,7 +70,6 @@ class App extends Component {
         <div className='tc'>
           <Particles className='pc' params={utility.particlesoptions} />
           <Header routeChange={this.onRouteChange} />
-          <h1 className='tc f1 courier  ' style={{ 'color': 'white' }}><Time /></h1>
           <Menu />
           <Spaceship />
           {
@@ -95,6 +100,14 @@ class App extends Component {
               <div>
                 <Searchbox searchChange={this.onSearchChange} />
                 <PlanetList planets={filteredPlanets} />
+              </div>
+              : null
+          }
+          {
+            this.state.route === 'people' ?
+              <div>
+                <Searchbox searchChange={this.onSearchChange} />
+                <PeopleList people={filteredPeople} />
               </div>
               : null
           }
